@@ -63,6 +63,9 @@ DELAY_MIN_FIRST = 5
 DELAY_MAX_FIRST = 10
 DELAY_MIN_FAST = 2
 DELAY_MAX_FAST = 4
+
+# Spring over profiler hentet inden for de sidste X timer
+MIN_TIMER_MELLEM_HENTNINGER = int(os.getenv("MIN_HOURS_BETWEEN_FETCHES", "23"))
 # ─────────────────────────────────────────────────────────────────
 
 
@@ -434,20 +437,28 @@ def byg_rss(alle_posts, kanal_titel, kanal_link, kanal_beskrivelse):
 
     for post in alle_posts:
         item = SubElement(channel, "item")
+
         SubElement(item, "title").text = byg_post_titel(post)
         SubElement(item, "link").text = post["url"]
-        SubElement(item, "description").text = post["tekst"]
-        SubElement(item, "content:encoded").text = post["tekst"]
-        SubElement(item, "pubDate").text = post["dato"].strftime("%a, %d %b %Y %H:%M:%S +0000")
-        SubElement(item, "guid").text = post["url"]
-        SubElement(item, "author").text = post["profil"]
 
+        # Tilføj <video> tag til beskrivelsen hvis det er en video-post
         medie_type = post.get("medie_type", "billede")
-        SubElement(item, "category").text = f"instagram-{medie_type}"
-
         billede = post.get("billede")
         video_url = post.get("video")
         ressourcer = post.get("ressourcer") or []
+
+        tekst = post["tekst"]
+        if medie_type == "video" and video_url:
+            video_html = f'<video controls style="max-width:100%;height:auto;" src="{html.escape(video_url)}"></video>'
+            # Indsæt videoen i starten af teksten
+            tekst = video_html + "\n" + tekst
+
+        SubElement(item, "description").text = tekst
+        SubElement(item, "content:encoded").text = tekst
+        SubElement(item, "pubDate").text = post["dato"].strftime("%a, %d %b %Y %H:%M:%S +0000")
+        SubElement(item, "guid").text = post["url"]
+        SubElement(item, "author").text = post["profil"]
+        SubElement(item, "category").text = f"instagram-{medie_type}"
 
         if medie_type == "video" and video_url:
             video_type = find_video_type(video_url)
@@ -680,13 +691,47 @@ def main():
     else:
         print("🆕 Første kørsel - henter alle posts (kan tage lang tid)")
 
+    # Filtrer profiler der blev hentet for nyligt
+    nu = datetime.now(timezone.utc)
+    profiler_at_hente = []
+    profiler_springt_over = 0
+    
+    for brugernavn in profiler_batch:
+        sidste_fetch = cache["last_fetch"].get(brugernavn)
+        if sidste_fetch:
+            tid_siden_sidste = (nu - sidste_fetch).total_seconds() / 3600  # timer
+            if tid_siden_sidste < MIN_TIMER_MELLEM_HENTNINGER:
+                profiler_springt_over += 1
+                continue
+        profiler_at_hente.append(brugernavn)
+    
+    if profiler_springt_over > 0:
+        print(f"⏭️  Springer {profiler_springt_over} profiler over (hentet inden for {MIN_TIMER_MELLEM_HENTNINGER} timer)")
+    
+    if not profiler_at_hente:
+        print("✅ Alle profiler er opdaterede - intet at hente")
+        print("\n📝 Genererer feeds fra cache...")
+        byg_og_gem_rss(cache)
+        total_posts = sum(len(posts) for posts in cache.get("posts", {}).values())
+        print(f"✅ Feeds opdateret fra cache med {total_posts} posts")
+        return
+    
+    print(f"📥 Henter {len(profiler_at_hente)} profiler der skal opdateres")
+
     cl = hent_klient(fast_mode=fast_mode)
 
     nye_posts_count = 0
+    profiler_hentet_total = len([p for p in cache["last_fetch"] if cache["last_fetch"][p]]) - len(profiler_at_hente)
+    progress_file = Path("~/.sleepwatcher-jobs/instagram-rss.progress").expanduser()
 
-    for idx, brugernavn in enumerate(profiler_batch, 1):
-        actual_idx = start_idx + idx
-        print(f"\n📸 Henter posts fra @{brugernavn} ({actual_idx}/{total_profiler})...")
+    for idx, brugernavn in enumerate(profiler_at_hente, 1):
+        profil_nr_total = profiler_hentet_total + idx
+        
+        # Skriv progress til fil så man kan tjekke status
+        progress_file.write_text(f"{profil_nr_total}/{total_profiler} - Henter @{brugernavn}")
+        
+        print(f"\n📸 [{profil_nr_total}/{total_profiler}] Henter @{brugernavn} ({idx}/{len(profiler_at_hente)} i denne kørsel)...")
+        sys.stdout.flush()  # Force output til log
         try:
             bruger_id = cl.user_id_from_username(brugernavn)
             medier = cl.user_medias(bruger_id, amount=POSTS_PER_PROFIL)
@@ -747,7 +792,7 @@ def main():
             else:
                 print(f"  ℹ️  Ingen nye posts (tjekket {len(medier)} posts)")
 
-            if idx < len(profiler_batch):
+            if idx < len(profiler_at_hente):
                 wait_time = (DELAY_MAX_FAST if fast_mode else DELAY_MAX_FIRST) + 2
                 print(f"  ⏳ Venter {wait_time} sek. før næste profil...")
                 time.sleep(wait_time)
