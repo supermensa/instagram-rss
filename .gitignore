@@ -6,8 +6,6 @@
 !instagram_rss.py
 !profiler.txt
 !test_*.py
-!docs/
-!docs/**
 !scripts/
 !scripts/**
 !public/
@@ -15,7 +13,6 @@
 !netnewswire/
 !netnewswire/**
 
-# Disse docs skal kun være lokale
+# Disse filer og mapper skal kun være lokale
 README.md
-docs/TODOS.md
-docs/VPN_ISSUES.md
+docs/
