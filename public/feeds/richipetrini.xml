@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://supermensa.github.io/instagram-rss/public/feed.xsl"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Instagram: @richipetrini</title>
+    <link>https://www.instagram.com/richipetrini/</link>
+    <description>Seneste 3 posts fra @richipetrini</description>
+    <language>da</language>
+    <item>
+      <title>● On the “craft” within the FinneGAN interface FinneGAN is a GAN model trained o...</title>
+      <link>https://www.instagram.com/p/DVYIHSMjC86/</link>
+      <description><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/643558354_18571500649015331_8517805347574964573_n.jpg?stp=dst-jpg_e15_s480x480_tt6&amp;_nc_cat=100&amp;ig_cache_key=Mzg0Mzg1NzI2NDIyNjkxMDg2OA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHg5NjAuc2RyLkMzIn0%3D&amp;_nc_ohc=EDFwBkWXsUQQ7kNvwEQcAcC&amp;_nc_oc=Adq_eNDgMemhA8sALXmONzFeTkkE-faa1ol8KpYk1hql7fmXlgR9noS3PUzjlWWBCfU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfyNjN-V2V5wSokLlP7JuFIFO2BoFP9ybaEimPlad66khw&amp;oe=69C99D74" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>● On the “craft” within the FinneGAN interface<br/>
+FinneGAN is a GAN model trained on Finnegans Wake. When you enter the interface, the model is initialized and begins generating new sentences from a binary latent code. Each initialization produces a unique output. Rather than presenting only the output, the interface allows you to traverse the intermediate representations of the network—from early, noisy activations to the final pre-linguistic signal. The organization of these levels of articulation is analogous to an ascent and descent through the clouds. The interface comprises vertical travel through a stack of volumetric clouds, each corresponding to a specific internal convolutional layer of the GAN.<br/>
+The stack is organized by density: in the lower, denser clouds, the generation remains fuzzy and dominated by noise. As you move upward, the cloud density decreases and the output becomes progressively more articulated.<br/>
+Slides:<br/>
+1. The navigation logic through the internal convolutional layers of the finneGAN model, driven by the cursor’s position over time.<br/>
+2. The transcription space records the history of internal navigation and includes:<br/>
+– the binary latent code fed to the finneGAN<br/>
+– the currently active convolutional layer<br/>
+– the directionality of navigation<br/>
+– the transcription generated using OpenAI’s Whisper Tiny speech-to-text model<br/>
+3. Detail view showing the fragment shader computing over time, producing emergent behavior in response to the cursor movement.<br/>
+4. Abstract diagram of an ascent through cloud layers corresponding to increasingly discrete articulations.<br/>
+5. The fully assembled finneGAN interface. <br/>
+6. Example .json response. To enable working directly from within the model, the internal convolutional layers are exposed as discrete API endpoints that can be queried independently.</p>]]></description>
+      <content:encoded><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/643558354_18571500649015331_8517805347574964573_n.jpg?stp=dst-jpg_e15_s480x480_tt6&amp;_nc_cat=100&amp;ig_cache_key=Mzg0Mzg1NzI2NDIyNjkxMDg2OA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHg5NjAuc2RyLkMzIn0%3D&amp;_nc_ohc=EDFwBkWXsUQQ7kNvwEQcAcC&amp;_nc_oc=Adq_eNDgMemhA8sALXmONzFeTkkE-faa1ol8KpYk1hql7fmXlgR9noS3PUzjlWWBCfU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfyNjN-V2V5wSokLlP7JuFIFO2BoFP9ybaEimPlad66khw&amp;oe=69C99D74" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>● On the “craft” within the FinneGAN interface<br/>
+FinneGAN is a GAN model trained on Finnegans Wake. When you enter the interface, the model is initialized and begins generating new sentences from a binary latent code. Each initialization produces a unique output. Rather than presenting only the output, the interface allows you to traverse the intermediate representations of the network—from early, noisy activations to the final pre-linguistic signal. The organization of these levels of articulation is analogous to an ascent and descent through the clouds. The interface comprises vertical travel through a stack of volumetric clouds, each corresponding to a specific internal convolutional layer of the GAN.<br/>
+The stack is organized by density: in the lower, denser clouds, the generation remains fuzzy and dominated by noise. As you move upward, the cloud density decreases and the output becomes progressively more articulated.<br/>
+Slides:<br/>
+1. The navigation logic through the internal convolutional layers of the finneGAN model, driven by the cursor’s position over time.<br/>
+2. The transcription space records the history of internal navigation and includes:<br/>
+– the binary latent code fed to the finneGAN<br/>
+– the currently active convolutional layer<br/>
+– the directionality of navigation<br/>
+– the transcription generated using OpenAI’s Whisper Tiny speech-to-text model<br/>
+3. Detail view showing the fragment shader computing over time, producing emergent behavior in response to the cursor movement.<br/>
+4. Abstract diagram of an ascent through cloud layers corresponding to increasingly discrete articulations.<br/>
+5. The fully assembled finneGAN interface. <br/>
+6. Example .json response. To enable working directly from within the model, the internal convolutional layers are exposed as discrete API endpoints that can be queried independently.</p>]]></content:encoded>
+      <pubDate>Mon, 02 Mar 2026 09:26:39 +0000</pubDate>
+      <guid>https://www.instagram.com/p/DVYIHSMjC86/</guid>
+      <author>richipetrini</author>
+      <category>instagram-billede</category>
+      <enclosure url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/643558354_18571500649015331_8517805347574964573_n.jpg?stp=dst-jpg_e15_s480x480_tt6&amp;_nc_cat=100&amp;ig_cache_key=Mzg0Mzg1NzI2NDIyNjkxMDg2OA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHg5NjAuc2RyLkMzIn0%3D&amp;_nc_ohc=EDFwBkWXsUQQ7kNvwEQcAcC&amp;_nc_oc=Adq_eNDgMemhA8sALXmONzFeTkkE-faa1ol8KpYk1hql7fmXlgR9noS3PUzjlWWBCfU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfyNjN-V2V5wSokLlP7JuFIFO2BoFP9ybaEimPlad66khw&amp;oe=69C99D74" type="image/jpeg"/>
+      <media:content url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/643558354_18571500649015331_8517805347574964573_n.jpg?stp=dst-jpg_e15_s480x480_tt6&amp;_nc_cat=100&amp;ig_cache_key=Mzg0Mzg1NzI2NDIyNjkxMDg2OA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHg5NjAuc2RyLkMzIn0%3D&amp;_nc_ohc=EDFwBkWXsUQQ7kNvwEQcAcC&amp;_nc_oc=Adq_eNDgMemhA8sALXmONzFeTkkE-faa1ol8KpYk1hql7fmXlgR9noS3PUzjlWWBCfU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfyNjN-V2V5wSokLlP7JuFIFO2BoFP9ybaEimPlad66khw&amp;oe=69C99D74" medium="image" type="image/jpeg"/>
+      <media:thumbnail url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/643558354_18571500649015331_8517805347574964573_n.jpg?stp=dst-jpg_e15_s480x480_tt6&amp;_nc_cat=100&amp;ig_cache_key=Mzg0Mzg1NzI2NDIyNjkxMDg2OA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyMHg5NjAuc2RyLkMzIn0%3D&amp;_nc_ohc=EDFwBkWXsUQQ7kNvwEQcAcC&amp;_nc_oc=Adq_eNDgMemhA8sALXmONzFeTkkE-faa1ol8KpYk1hql7fmXlgR9noS3PUzjlWWBCfU&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfyNjN-V2V5wSokLlP7JuFIFO2BoFP9ybaEimPlad66khw&amp;oe=69C99D74"/>
+    </item>
+    <item>
+      <title>@labiennale Architettura Venezia 2025, a little throwback. Together with @richip...</title>
+      <link>https://www.instagram.com/p/DVMQDGqDYgn/</link>
+      <description><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/641428651_18569491492025576_5916544754996330963_n.jpg?stp=dst-jpg_e15_s640x640_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzg0MDUxNTE2NDI5MDc3OTE3NTE4NTY5NDkxNDg5MDI1NTc2.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MHgxNzQwLnNkci5DMyJ9&amp;_nc_ohc=9RrqUic7cY8Q7kNvwGSnFvD&amp;_nc_oc=Adqutyc4-qqwi-zfcd2XE_Q5CblEbDJArV1yRhHbbn018BVC94hHixmbs615f-TVf4s&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfxlQ9FfcrLVVgHnHpJpdFQnikzO3lcbbxCqndl6EL6hOg&amp;oe=69C9916C" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>@labiennale Architettura Venezia 2025, a little throwback.<br/>
+<br/>
+Together with @richipetrini, we worked on the installation Unpredictable Atmosphere as a multichannel web interactive space, where strips of data on outliers — hurricanes that deviate from the statistical median pattern — were excluded from contemporary AI climate models. We unfolded them in space to question this growing tendency of synthetic systems to ignore extreme events, collapsing into an infinite series of modeling practices.<br/>
+<br/>
+Thanks to audio designer @lero____ , who worked with recordings from data centers, satellites, and transmission frequencies, carefully shaping the soundscape; to @chiararebolino for the graphics and the direction of the visual storytelling within the exhibition table; and to @alessia.rapetti for the care in drawing and designing the table itself.<br/>
+<br/>
+Behind the scenes, a big thanks to @chxdahmen for his support with the fluid dynamics simulation, and to @joppemassant who, like a wizard, made possible all the AI modeling of storms collected in the full dataset streamed in the space.<br/>
+<br/>
+Special thanks to @mt.crm for his thoughtful video report and editing of this installation video.<br/>
+<br/>
+And again, a unique thanks to @richipetrini , who designed this installation with me and coded a beautifully complex and branched web space where all the information has been unfolding over the past year.<br/>
+<br/>
+&lt;3 Looking forward to letting this web space travel beyond the internet again. &lt;3<br/>
+<br/>
+🌪️📡</p>]]></description>
+      <content:encoded><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/641428651_18569491492025576_5916544754996330963_n.jpg?stp=dst-jpg_e15_s640x640_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzg0MDUxNTE2NDI5MDc3OTE3NTE4NTY5NDkxNDg5MDI1NTc2.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MHgxNzQwLnNkci5DMyJ9&amp;_nc_ohc=9RrqUic7cY8Q7kNvwGSnFvD&amp;_nc_oc=Adqutyc4-qqwi-zfcd2XE_Q5CblEbDJArV1yRhHbbn018BVC94hHixmbs615f-TVf4s&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfxlQ9FfcrLVVgHnHpJpdFQnikzO3lcbbxCqndl6EL6hOg&amp;oe=69C9916C" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>@labiennale Architettura Venezia 2025, a little throwback.<br/>
+<br/>
+Together with @richipetrini, we worked on the installation Unpredictable Atmosphere as a multichannel web interactive space, where strips of data on outliers — hurricanes that deviate from the statistical median pattern — were excluded from contemporary AI climate models. We unfolded them in space to question this growing tendency of synthetic systems to ignore extreme events, collapsing into an infinite series of modeling practices.<br/>
+<br/>
+Thanks to audio designer @lero____ , who worked with recordings from data centers, satellites, and transmission frequencies, carefully shaping the soundscape; to @chiararebolino for the graphics and the direction of the visual storytelling within the exhibition table; and to @alessia.rapetti for the care in drawing and designing the table itself.<br/>
+<br/>
+Behind the scenes, a big thanks to @chxdahmen for his support with the fluid dynamics simulation, and to @joppemassant who, like a wizard, made possible all the AI modeling of storms collected in the full dataset streamed in the space.<br/>
+<br/>
+Special thanks to @mt.crm for his thoughtful video report and editing of this installation video.<br/>
+<br/>
+And again, a unique thanks to @richipetrini , who designed this installation with me and coded a beautifully complex and branched web space where all the information has been unfolding over the past year.<br/>
+<br/>
+&lt;3 Looking forward to letting this web space travel beyond the internet again. &lt;3<br/>
+<br/>
+🌪️📡</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 18:51:34 +0000</pubDate>
+      <guid>https://www.instagram.com/p/DVMQDGqDYgn/</guid>
+      <author>richipetrini</author>
+      <category>instagram-billede</category>
+      <enclosure url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/641428651_18569491492025576_5916544754996330963_n.jpg?stp=dst-jpg_e15_s640x640_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzg0MDUxNTE2NDI5MDc3OTE3NTE4NTY5NDkxNDg5MDI1NTc2.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MHgxNzQwLnNkci5DMyJ9&amp;_nc_ohc=9RrqUic7cY8Q7kNvwGSnFvD&amp;_nc_oc=Adqutyc4-qqwi-zfcd2XE_Q5CblEbDJArV1yRhHbbn018BVC94hHixmbs615f-TVf4s&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfxlQ9FfcrLVVgHnHpJpdFQnikzO3lcbbxCqndl6EL6hOg&amp;oe=69C9916C" type="image/jpeg"/>
+      <media:content url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/641428651_18569491492025576_5916544754996330963_n.jpg?stp=dst-jpg_e15_s640x640_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzg0MDUxNTE2NDI5MDc3OTE3NTE4NTY5NDkxNDg5MDI1NTc2.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MHgxNzQwLnNkci5DMyJ9&amp;_nc_ohc=9RrqUic7cY8Q7kNvwGSnFvD&amp;_nc_oc=Adqutyc4-qqwi-zfcd2XE_Q5CblEbDJArV1yRhHbbn018BVC94hHixmbs615f-TVf4s&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfxlQ9FfcrLVVgHnHpJpdFQnikzO3lcbbxCqndl6EL6hOg&amp;oe=69C9916C" medium="image" type="image/jpeg"/>
+      <media:thumbnail url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/641428651_18569491492025576_5916544754996330963_n.jpg?stp=dst-jpg_e15_s640x640_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzg0MDUxNTE2NDI5MDc3OTE3NTE4NTY5NDkxNDg5MDI1NTc2.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MHgxNzQwLnNkci5DMyJ9&amp;_nc_ohc=9RrqUic7cY8Q7kNvwGSnFvD&amp;_nc_oc=Adqutyc4-qqwi-zfcd2XE_Q5CblEbDJArV1yRhHbbn018BVC94hHixmbs615f-TVf4s&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_AfxlQ9FfcrLVVgHnHpJpdFQnikzO3lcbbxCqndl6EL6hOg&amp;oe=69C9916C"/>
+    </item>
+    <item>
+      <title>Read Latent Spacecraft: Brains, GANs, Finnegans in Antikythera Journal at latent...</title>
+      <link>https://www.instagram.com/p/DUqsOtzDmu2/</link>
+      <description><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/629217559_17999345741856912_8339567518692390698_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzgzMTA2ODk1ODMyNjE1NjIxNA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=57rXB6ujQ1gQ7kNvwEunPiN&amp;_nc_oc=Adqh9e_aVruL9enU9A3cGq2ds1p7aTdVzLN6o_XgqyZ9ySpwbsnb6YtBM-bNzyam5ao&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=7&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_Afwb5YNhANKsut-uHVMHT8zMpQHLV_zDcz5F79Fn6z-gLQ&amp;oe=69C9B1F0" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>Read Latent Spacecraft: Brains, GANs, Finnegans in Antikythera Journal at latentspacecraft.antikythera.org or via link in bio.<br/>
+<br/>
+Authors @begus.nina, @metahaven &amp; @begusgasper<br/>
+Interfaces @metahaven &amp; @richipetrini</p>]]></description>
+      <content:encoded><![CDATA[<p><img src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/629217559_17999345741856912_8339567518692390698_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzgzMTA2ODk1ODMyNjE1NjIxNA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=57rXB6ujQ1gQ7kNvwEunPiN&amp;_nc_oc=Adqh9e_aVruL9enU9A3cGq2ds1p7aTdVzLN6o_XgqyZ9ySpwbsnb6YtBM-bNzyam5ao&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=7&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_Afwb5YNhANKsut-uHVMHT8zMpQHLV_zDcz5F79Fn6z-gLQ&amp;oe=69C9B1F0" alt="Instagram billede fra @richipetrini" /></p><p><strong>@richipetrini</strong></p><p>Read Latent Spacecraft: Brains, GANs, Finnegans in Antikythera Journal at latentspacecraft.antikythera.org or via link in bio.<br/>
+<br/>
+Authors @begus.nina, @metahaven &amp; @begusgasper<br/>
+Interfaces @metahaven &amp; @richipetrini</p>]]></content:encoded>
+      <pubDate>Thu, 12 Feb 2026 17:57:15 +0000</pubDate>
+      <guid>https://www.instagram.com/p/DUqsOtzDmu2/</guid>
+      <author>richipetrini</author>
+      <category>instagram-billede</category>
+      <enclosure url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/629217559_17999345741856912_8339567518692390698_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzgzMTA2ODk1ODMyNjE1NjIxNA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=57rXB6ujQ1gQ7kNvwEunPiN&amp;_nc_oc=Adqh9e_aVruL9enU9A3cGq2ds1p7aTdVzLN6o_XgqyZ9ySpwbsnb6YtBM-bNzyam5ao&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=7&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_Afwb5YNhANKsut-uHVMHT8zMpQHLV_zDcz5F79Fn6z-gLQ&amp;oe=69C9B1F0" type="image/jpeg"/>
+      <media:content url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/629217559_17999345741856912_8339567518692390698_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzgzMTA2ODk1ODMyNjE1NjIxNA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=57rXB6ujQ1gQ7kNvwEunPiN&amp;_nc_oc=Adqh9e_aVruL9enU9A3cGq2ds1p7aTdVzLN6o_XgqyZ9ySpwbsnb6YtBM-bNzyam5ao&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=7&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_Afwb5YNhANKsut-uHVMHT8zMpQHLV_zDcz5F79Fn6z-gLQ&amp;oe=69C9B1F0" medium="image" type="image/jpeg"/>
+      <media:thumbnail url="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/629217559_17999345741856912_8339567518692390698_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ig_cache_key=MzgzMTA2ODk1ODMyNjE1NjIxNA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=57rXB6ujQ1gQ7kNvwEunPiN&amp;_nc_oc=Adqh9e_aVruL9enU9A3cGq2ds1p7aTdVzLN6o_XgqyZ9ySpwbsnb6YtBM-bNzyam5ao&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;se=7&amp;_nc_ht=scontent-cph2-1.cdninstagram.com&amp;_nc_gid=R_vknK2jDDQVLiev0WcY9Q&amp;_nc_ss=7a338&amp;oh=00_Afwb5YNhANKsut-uHVMHT8zMpQHLV_zDcz5F79Fn6z-gLQ&amp;oe=69C9B1F0"/>
+    </item>
+  </channel>
+</rss>
