@@ -56,6 +56,7 @@ OPML_FIL = f"{PUBLIC_MAPPE}/instagram.opml"
 OPML_FIL_NY = f"{PUBLIC_MAPPE}/instagram-by-profile.opml"
 INDEX_FIL = f"{PUBLIC_MAPPE}/index.html"
 STYLESHEET_FIL = f"{PUBLIC_MAPPE}/feed.xsl"
+TIMING_LOG_FIL = "timing.log"
 PAGES_BASE_URL = os.getenv("PAGES_BASE_URL", "https://supermensa.github.io/instagram-rss").rstrip("/")
 PUBLIC_BASE_URL = f"{PAGES_BASE_URL}/{PUBLIC_MAPPE}"
 
@@ -64,9 +65,17 @@ DELAY_MAX_FIRST = 10
 DELAY_MIN_FAST = 2
 DELAY_MAX_FAST = 4
 
-# Spring over profiler hentet inden for de sidste X timer
+# Minimum timer mellem hentninger for aktive profiler (default)
 MIN_TIMER_MELLEM_HENTNINGER = int(os.getenv("MIN_HOURS_BETWEEN_FETCHES", "23"))
 # ─────────────────────────────────────────────────────────────────
+
+
+def log_timing(besked):
+    """Skriv en linje til timing.log med tidsstempel."""
+    linje = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  {besked}\n"
+    with open(TIMING_LOG_FIL, "a", encoding="utf-8") as f:
+        f.write(linje)
+    print(linje, end="")
 
 
 def hent_klient(fast_mode=False):
@@ -168,6 +177,37 @@ def hent_posts_fra_cache(cache, limit_per_profil=None, kun_profil=None):
             alle_posts.append(post_copy)
 
     return alle_posts
+
+
+def adaptive_interval_timer(profil, cache):
+    """Returner antal timer mellem hentninger baseret på profilers posting-frekvens.
+
+    Aktiv (< 3 dage siden)   → 24 timer
+    Semi-aktiv (3-14 dage)   → 48 timer
+    Sjælden (15-60 dage)     → 72 timer
+    Inaktiv (> 60 dage)      → 168 timer (1 uge)
+    """
+    posts = cache.get("posts", {}).get(profil, [])
+    if not posts:
+        return MIN_TIMER_MELLEM_HENTNINGER
+
+    try:
+        seneste_post_dato = datetime.fromisoformat(posts[0]["dato"])
+        if seneste_post_dato.tzinfo is None:
+            seneste_post_dato = seneste_post_dato.replace(tzinfo=timezone.utc)
+    except (KeyError, ValueError):
+        return MIN_TIMER_MELLEM_HENTNINGER
+
+    dage_siden_post = (datetime.now(timezone.utc) - seneste_post_dato).total_seconds() / 86400
+
+    if dage_siden_post <= 3:
+        return 24
+    elif dage_siden_post <= 14:
+        return 48
+    elif dage_siden_post <= 60:
+        return 72
+    else:
+        return 168
 
 
 def cache_post_har_mangelfulde_medier(post):
@@ -668,6 +708,10 @@ def main():
             print("Eksempel: python instagram_rss.py 0 50")
             exit(1)
 
+    start_tid = time.monotonic()
+    batch_label = f"{start_idx}-{end_idx if end_idx else 'slut'}"
+    log_timing(f"START  batch={batch_label}")
+
     profiler = hent_profiler()
 
     if end_idx:
@@ -691,22 +735,29 @@ def main():
     else:
         print("🆕 Første kørsel - henter alle posts (kan tage lang tid)")
 
-    # Filtrer profiler der blev hentet for nyligt
+    # Filtrer profiler der blev hentet for nyligt – med adaptivt interval
     nu = datetime.now(timezone.utc)
     profiler_at_hente = []
+    interval_fordeling = {24: 0, 48: 0, 72: 0, 168: 0}
     profiler_springt_over = 0
-    
+
     for brugernavn in profiler_batch:
         sidste_fetch = cache["last_fetch"].get(brugernavn)
+        interval = adaptive_interval_timer(brugernavn, cache)
+        interval_fordeling[interval] = interval_fordeling.get(interval, 0) + 1
         if sidste_fetch:
-            tid_siden_sidste = (nu - sidste_fetch).total_seconds() / 3600  # timer
-            if tid_siden_sidste < MIN_TIMER_MELLEM_HENTNINGER:
+            tid_siden_sidste = (nu - sidste_fetch).total_seconds() / 3600
+            if tid_siden_sidste < interval:
                 profiler_springt_over += 1
                 continue
         profiler_at_hente.append(brugernavn)
-    
+
+    print(f"📊 Interval-fordeling: {interval_fordeling[24]} aktive (24t), "
+          f"{interval_fordeling[48]} semi-aktive (48t), "
+          f"{interval_fordeling[72]} sjældne (72t), "
+          f"{interval_fordeling[168]} inaktive (168t)")
     if profiler_springt_over > 0:
-        print(f"⏭️  Springer {profiler_springt_over} profiler over (hentet inden for {MIN_TIMER_MELLEM_HENTNINGER} timer)")
+        print(f"⏭️  Springer {profiler_springt_over} profiler over (adaptivt interval)")
     
     if not profiler_at_hente:
         print("✅ Alle profiler er opdaterede - intet at hente")
@@ -818,6 +869,10 @@ def main():
     if nye_posts_count > 0:
         print(f"   └─ Nye posts denne kørsel: {nye_posts_count}")
     print(f"\nℹ️  GitHub Pages oversigt: {PUBLIC_BASE_URL}/")
+
+    varighed = time.monotonic() - start_tid
+    minutter, sekunder = divmod(int(varighed), 60)
+    log_timing(f"SLUT   batch={batch_label}  hentet={len(profiler_at_hente)}  nye_posts={nye_posts_count}  tid={minutter}m{sekunder:02d}s")
 
     if end_idx and end_idx < total_profiler:
         næste_slut = min(end_idx + (end_idx - start_idx), total_profiler)
